@@ -22,7 +22,7 @@ El proyecto está listo para ser ejecutado de manera local mediante **Docker Com
 ---
 
 ## 🗂 Estructura del proyecto
-
+```
 eventos_universitarios/
 ├── backend/                  # Servidor Node.js + Express
 │   ├── src/
@@ -40,10 +40,7 @@ eventos_universitarios/
 │   ├── package.json
 │   └── Dockerfile
 └── docker-compose.yml        # Orquestación de contenedores
-
-
-
-
+```
 ---
 
 ## ⚙️ Requisitos
