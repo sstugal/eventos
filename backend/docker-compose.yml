@@ -1,0 +1,30 @@
+#version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: eventos_api
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./src:/usr/src/app/src
+    command: npx nodemon src/app.js
+
+  db:
+    image: postgres:15
+    container_name: eventos_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: eventos_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
